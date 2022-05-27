@@ -13,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('invoices_items', function (Blueprint $table) {
             $table->id();
-            $table->string('profile_code', 20);
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->timestamp('last_login')->default(now());
-            $table->boolean('is_active')->default(true);
-            $table->boolean('is_archived')->default(false);
+            $table->string('invoice_item_code', 20)->unique();
+            $table->string('invoice_code', 20);
+            $table->text('item_detail');
+            $table->integer('quantity');
+            $table->float('amount');
+            $table->string('currency')->default('IDR');
+            $table->boolean('status')->default(true);
             $table->string('created_by', 100)->nullable();
             $table->string('updated_by', 100)->nullable();
             $table->timestamps();
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('invoices_items');
     }
 };

@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('drivers', function (Blueprint $table) {
             $table->id();
+            $table->string('driver_code', 20)->unique();
             $table->string('profile_code', 20);
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->timestamp('last_login')->default(now());
+            $table->string('driver_license_id', 20)->unique();
+            $table->text('driver_license_image');
             $table->boolean('is_active')->default(true);
             $table->boolean('is_archived')->default(false);
             $table->string('created_by', 100)->nullable();
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('drivers');
     }
 };

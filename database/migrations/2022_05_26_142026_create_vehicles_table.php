@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
-            $table->string('profile_code', 20);
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->timestamp('last_login')->default(now());
+            $table->string('vehicle_code', 20)->unique();
+            $table->string('vehicles_brands_model_code', 20);
+            $table->string('fuel_type', 50);
             $table->boolean('is_active')->default(true);
             $table->boolean('is_archived')->default(false);
             $table->string('created_by', 100)->nullable();
@@ -34,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('vehicles');
     }
 };

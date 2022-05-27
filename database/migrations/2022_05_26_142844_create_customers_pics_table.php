@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('customers_pics', function (Blueprint $table) {
             $table->id();
+            $table->string('customer_code', 20);
             $table->string('profile_code', 20);
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->timestamp('last_login')->default(now());
             $table->boolean('is_active')->default(true);
             $table->boolean('is_archived')->default(false);
             $table->string('created_by', 100)->nullable();
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('customers_pics');
     }
 };

@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('agents_vehicles', function (Blueprint $table) {
             $table->id();
-            $table->string('profile_code', 20);
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->timestamp('last_login')->default(now());
+            $table->string('agent_vehicle_code', 20)->unique();
+            $table->string('plate_number', 20)->unique();
+            $table->string('agent_code', 20);
+            $table->string('vehicle_code', 20);
+            $table->string('color', 50);
             $table->boolean('is_active')->default(true);
             $table->boolean('is_archived')->default(false);
             $table->string('created_by', 100)->nullable();
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('agents_vehicles');
     }
 };
