@@ -14,9 +14,9 @@ class Profile extends Model
         return $this->hasOne(Customer::class, 'ext_customer_code', 'profile_code');
     }
 
-    public function user()
+    public function account()
     {
-        return $this->hasOne(User::class, 'profile_code', 'profile_code');
+        return $this->hasOne(Account::class, 'profile_code', 'profile_code');
     }
 
     public function customers_pic()
