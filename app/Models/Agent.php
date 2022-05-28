@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Agent extends Model
 {
     use HasFactory;
+
+    public function agents_vehicle()
+    {
+        return $this->hasMany(AgentsVehicle::class, 'agent_code', 'agent_code');
+    }
 }

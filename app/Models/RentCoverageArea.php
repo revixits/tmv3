@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class RentCoverageArea extends Model
 {
     use HasFactory;
+
+    public function reservation()
+    {
+        return $this->hasMany(Reservation::class, 'rent_coverage_area_code', 'rent_coverage_area_code');
+    }
 }
