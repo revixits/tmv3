@@ -36,7 +36,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="/" class="nav-link {{ ($pageTitle === "dashboard") ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -44,8 +44,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                    <a href="#" class="nav-link {{ ($pageTitle === "reservations_list") || ($pageTitle === "reservations_schedule") || ($pageTitle === "reservations_availability") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-calendar-alt"></i>
                         <p>
                             Reservation
                             <i class="right fas fa-angle-left"></i>
@@ -53,19 +53,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/reservations/list" class="nav-link {{ ($pageTitle === "reservations_list") ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/reservations/schedule" class="nav-link {{ ($pageTitle === "reservations_schedule") ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Schedule</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/reservations/availability" class="nav-link {{ ($pageTitle === "reservations_availability") ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Availability</p>
                             </a>
@@ -73,16 +73,16 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-calendar-alt"></i>
+                    <a href="/invoices/list" class="nav-link {{ ($pageTitle === "invoices_list") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-file"></i>
                         <p>
                             Invoices
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-calendar-alt"></i>
+                    <a href="/customers/list" class="nav-link {{ ($pageTitle === "customers_list") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user"></i>
                         <p>
                             Customers
                         </p>
@@ -92,8 +92,8 @@
                 <li class="nav-header">MASTER DATA</li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                    <a href="#" class="nav-link {{ ($pageTitle === "vehicles_list") || ($pageTitle === "vehicles_brands") || ($pageTitle === "vehicles_models") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-car"></i>
                         <p>
                             Vehicles
                             <i class="right fas fa-angle-left"></i>
@@ -101,19 +101,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/vehicles/list" class="nav-link {{ ($pageTitle === "vehicles_list") ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/vehicles/brands" class="nav-link {{ ($pageTitle === "vehicles_brands") ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Brands</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/vehicles/models" class="nav-link {{ ($pageTitle === "vehicles_models") ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Models</p>
                             </a>
@@ -121,8 +121,8 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                    <a href="#" class="nav-link {{ ($pageTitle === "agents_list") || ($pageTitle === "agents_vrhicles") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user"></i>
                         <p>
                             Agents
                             <i class="right fas fa-angle-left"></i>
@@ -130,15 +130,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/agents/list" class="nav-link {{ ($pageTitle === "agents_list") ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/agents/vehicles" class="nav-link {{ ($pageTitle === "agents_vehicles") ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Agent Vehicles</p>
+                                <p>Agents Vehicles</p>
                             </a>
                         </li>
                     </ul>
@@ -147,32 +147,32 @@
                 <li class="nav-header">RENT SETTINGS</li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-calendar-alt"></i>
+                    <a href="/periodtypes/list" class="nav-link {{ ($pageTitle === "period_types") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-edit"></i>
                         <p>
                             Period Types
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-calendar-alt"></i>
+                    <a href="/coverageareas/list" class="nav-link {{ ($pageTitle === "coverage_areas") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-edit"></i>
                         <p>
                             Coverage Areas
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-calendar-alt"></i>
+                    <a href="/renttypes/list" class="nav-link {{ ($pageTitle === "rent_types") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-edit"></i>
                         <p>
                             Rent Types
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-calendar-alt"></i>
+                    <a href="/termsconditions/list" class="nav-link {{ ($pageTitle === "terms_conditions") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-edit"></i>
                         <p>
                             Terms & Conditions
                         </p>
@@ -182,24 +182,24 @@
                 <li class="nav-header">PAYMENT SETTINGS</li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-calendar-alt"></i>
+                    <a href="/paymentchanneltypes/list" class="nav-link {{ ($pageTitle === "payment_channel_types") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-credit-card"></i>
                         <p>
                             Payment Channel Types
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-calendar-alt"></i>
+                    <a href="/paymentchannels/list" class="nav-link {{ ($pageTitle === "payment_channels") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-credit-card"></i>
                         <p>
                             Payment Channels
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-calendar-alt"></i>
+                    <a href="/paymentmethods/list" class="nav-link {{ ($pageTitle === "payment_methods") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-credit-card"></i>
                         <p>
                             Payment Methods
                         </p>
@@ -209,32 +209,32 @@
                 <li class="nav-header">USERS</li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-calendar-alt"></i>
+                    <a href="/profiles/list" class="nav-link {{ ($pageTitle === "profiles") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user"></i>
                         <p>
                             Profiles
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-calendar-alt"></i>
+                    <a href="/drivers/list" class="nav-link {{ ($pageTitle === "drivers") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user"></i>
                         <p>
                             Drivers
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-calendar-alt"></i>
+                    <a href="/guests/list" class="nav-link {{ ($pageTitle === "guests") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user"></i>
                         <p>
                             Guests
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-calendar-alt"></i>
+                    <a href="/accounts/list" class="nav-link {{ ($pageTitle === "accounts") ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user"></i>
                         <p>
                             Accounts
                         </p>
